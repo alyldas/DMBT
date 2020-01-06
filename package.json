@@ -1,10 +1,11 @@
 {
-  "name": "react",
+  "name": "dmbt",
   "version": "1.0.0",
-  "description": "",
+  "description": "Dembel Timer",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "bulma": "0.8.0",
     "duration": "0.2.2",
     "react": "16.12.0",
     "react-dom": "16.12.0",

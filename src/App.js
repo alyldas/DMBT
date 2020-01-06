@@ -1,5 +1,6 @@
 import React from "react";
 import "./styles.css";
+import "bulma/css/bulma.css";
 
 var Duration = require("duration");
 
@@ -32,18 +33,31 @@ class Counter extends React.Component {
   render() {
     return (
       <div>
-        <h3>Прошло {Math.round(this.state.passedp * 100) / 100}%</h3>
-        <h4>{this.state.passed.months} месяцев</h4>
-        <h4>{this.state.passed.days} дней</h4>
-        <h4>{this.state.passed.hours} часов</h4>
-        <h4>{this.state.passed.minutes} минут</h4>
-        <h4>{this.state.passed.seconds} секунд</h4>
-        <h3>Осталось {Math.round((100 - this.state.passedp) * 100) / 100}%</h3>
-        <h4>{this.state.left.months} месяцев</h4>
-        <h4>{this.state.left.days} дней</h4>
-        <h4>{this.state.left.hours} часов</h4>
-        <h4>{this.state.left.minutes} минут</h4>
-        <h4>{this.state.left.seconds} секунд</h4>
+        <progress
+          class="progress is-primary"
+          value={Math.round(this.state.passedp * 100) / 100}
+          max="100"
+        />
+        <h2 class="subtitle">
+          Прошло {Math.round(this.state.passedp * 100) / 100}%
+        </h2>
+        <div class="columns">
+          <div class="column">{this.state.passed.months} месяцев</div>
+          <div class="column">{this.state.passed.days} дней</div>
+          <div class="column">{this.state.passed.hours} часов</div>
+          <div class="column">{this.state.passed.minutes} минут</div>
+          <div class="column">{this.state.passed.seconds} секунд</div>
+        </div>
+        <h2 class="subtitle">
+          Осталось {Math.round((100 - this.state.passedp) * 100) / 100}%
+        </h2>
+        <div class="columns">
+          <div class="column">{this.state.left.months} месяцев</div>
+          <div class="column">{this.state.left.days} дней</div>
+          <div class="column">{this.state.left.hours} часов</div>
+          <div class="column">{this.state.left.minutes} минут</div>
+          <div class="column">{this.state.left.seconds} секунд</div>
+        </div>
       </div>
     );
   }
@@ -52,7 +66,7 @@ class Counter extends React.Component {
 export default function App() {
   return (
     <div className="App">
-      <h1>DMBT</h1>
+      <h1 class="title">DMBT</h1>
       <Counter />
     </div>
   );
